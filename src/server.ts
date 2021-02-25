@@ -1,15 +1,9 @@
-import 'reflect-metadata'
-import express, {Request, Response} from 'express'
-import './database'
-import { router } from './routes'
+import { app } from "./app";
 
-const app = express()
-app.use(express.json()) //habilitar formato json
-app.use(router)
-
-app.listen(3333, () => console.log('erro'));
+app.listen(3333);
 
 /**
+ * Entidades são a representação de uma tabela
  * criar migration npx typeorm migration:create -n CreateUsers
  * rodar a migration npm run typeorm migration:run
  * desfazer a migration npm run typeorm migration:revert
