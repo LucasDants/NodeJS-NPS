@@ -49,6 +49,7 @@ $ npm test
 ```
 
 <h1>🛠 NPS API</h1>
+<a href="https://github.com/Luksdantas/NodeJS-NPS/blob/main/Insomnia_2021-02-27.json">Insomnia document</a>
 <h2>POST Create User</h2>
 <h3>Request</h3>
 
