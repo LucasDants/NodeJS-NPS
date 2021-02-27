@@ -23,8 +23,7 @@ NPS API
 </p>
 
 <h1>:memo:About</h1>
-<p>NPS is a project developed during the <a href="https://nextlevelweek.com/">Next Level Week</a> presented by <a href="https://www.linkedin.com/school/rocketseat/">Rockeseat</a>.
- This project </p>
+<p>NPS is a project developed during the <a href="https://nextlevelweek.com/">Next Level Week</a> presented by <a href="https://www.linkedin.com/school/rocketseat/">Rockeseat</a>.</p>
 
 <h1>:rocket: Getting started</h1>
 
@@ -48,6 +47,8 @@ $ npm test
 # The application will open on the port: 3333 - go to http://localhost:3333
 
 ```
+
+<h1>:rocket: Getting started</h1>
 
 <h1>:bookmark_tabs: License</h1>
  <img  src="https://img.shields.io/github/license/Luksdantas/NodeJS-NPS" alt="License">
