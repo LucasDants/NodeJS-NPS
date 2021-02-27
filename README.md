@@ -48,7 +48,164 @@ $ npm test
 
 ```
 
-<h1>:rocket: Getting started</h1>
+<h1>🛠 NPS API</h1>
+<h2>POST Create User</h2>
+<h3>Request</h3>
+
+`POST /users`
+
+```
+curl --request POST \
+  --url http://localhost:3333/users \
+  --header 'Content-Type: application/json' \
+  --data '{
+	"name": "Example Name",
+	"email": "example@email.com"
+}'
+```
+
+<h3>Response</h3>
+
+```
+{
+  "id": "uuid",
+  "name": "Example Name",
+  "email": "example@email.com",
+  "created_at": "timestamp"
+}
+```
+
+<h2>POST Create Survey</h2>
+<h3>Request</h3>
+
+`POST /surveys`
+
+```
+curl --request POST \
+  --url http://localhost:3333/surveys \
+  --header 'Content-Type: application/json' \
+  --data '{
+"title": "Example Survey",
+"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam egestas eu odio vel pharetra. Donec faucibus consectetur ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
+}'
+```
+
+<h3>Response</h3>
+
+```
+{
+  "id": "uuid",
+  "title": "Example Survey",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam egestas eu odio vel pharetra. Donec faucibus consectetur ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+  "created_at": "timestamp"
+}
+```
+
+<h2>POST Send Mail</h2>
+<h3>Request</h3>
+
+`POST /sendMail`
+
+```
+curl --request POST \
+  --url http://localhost:3333/sendMail \
+  --header 'Content-Type: application/json' \
+  --data '{
+	"email": "example@email.com",
+	"survey_id": "uuid"
+}'
+```
+
+<h3>Response</h3>
+
+```
+{
+  "id": "uuid",
+  "user_id": "uuid",
+  "survey_id": "uuid",
+  "value": null,
+  "created_at": "timestamp",
+  "user": {
+    "id": "uuid",
+    "name": "Example Name",
+    "email": "example@email.com",
+    "created_at": "timestamp"
+  },
+  "survey": {
+    "id": "uuid",
+    "title": "Example Survey",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam egestas eu odio vel pharetra. Donec faucibus consectetur ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+    "created_at": "timestamp"
+  }
+}
+```
+
+<h2>GET List of Surveys</h2>
+<h3>Request</h3>
+
+`GET /surveys`
+
+```
+curl --request GET \
+  --url http://localhost:3333/surveys
+```
+
+<h3>Response</h3>
+
+```
+[
+  {
+    "id": "uuid",
+    "title": "Example Survey",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam egestas eu odio vel pharetra. Donec faucibus consectetur ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+    "created_at": "timestamp"
+  },
+]
+```
+
+<h2>GET Email Answer</h2>
+<h3>Request</h3>
+
+`GET /answers`
+
+```
+curl --request GET \
+  --url 'http://localhost:3333/answers/:value?u=surveysUserId'
+```
+
+<h3>Response</h3>
+
+```
+{
+  "id": "surveyUserId",
+  "user_id": "uuid",
+  "survey_id": "uuid",
+  "value": value,
+  "created_at": "timestamp"
+}
+```
+
+<h2>GET NPS</h2>
+<h3>Request</h3>
+
+`GET /nps`
+
+```
+curl --request GET \
+  --url http://localhost:3333/nps/:surveyId
+```
+
+<h3>Response</h3>
+
+```
+{
+  "detractors": 0,
+  "passives": 0,
+  "promotors": 0,
+  "totalAnswers": 0,
+  "nps": 0
+}
+```
 
 <h1>:bookmark_tabs: License</h1>
  <img  src="https://img.shields.io/github/license/Luksdantas/NodeJS-NPS" alt="License">
