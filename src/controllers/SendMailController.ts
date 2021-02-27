@@ -16,8 +16,6 @@ class SendMailController {
     const surveysRepository = getCustomRepository(SurveysRepository);
     const surveyUsersRepository = getCustomRepository(SurveyUsersRepository);
 
-    console.log('entrou')
-
     const user = await usersRepository.findOne({ email });
 
     if (!user) {
