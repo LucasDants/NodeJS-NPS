@@ -23,7 +23,7 @@ NPS API
 </p>
 
 <h1>:memo:About</h1>
-<p>NPS is a project developed during the <a href="https://nextlevelweek.com/">Next Level Week</a> presented by <a href="https://www.linkedin.com/school/rocketseat/">Rockeseat</a>.</p>
+<p>NPS is a project developed during the <a href="https://nextlevelweek.com/ 4">Next Level Week</a> presented by <a href="https://www.linkedin.com/school/rocketseat/">Rockeseat</a>.</p>
 
 <h1>:rocket: Getting started</h1>
 
